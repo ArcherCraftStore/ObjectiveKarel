@@ -1,52 +1,113 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Objectivekarel : Objective Karel++">
+<head>
+<title>Objective Karel</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Objectivekarel</title>
-  </head>
+<script type="text/javascript" src="//d14to6y4nub5k1.cloudfront.net/local/jquery.min.js"></script>
+<script type="text/javascript" src="//d14to6y4nub5k1.cloudfront.net/lib/codehs/library_live.js"></script>
 
-  <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ArcherCraftStore/ObjectiveKarel">View on GitHub</a>
+<style>
+canvas{
+    border: 1px solid black;
+}
+</style>
 
-          <h1 id="project_title">Objectivekarel</h1>
-          <h2 id="project_tagline">Objective Karel++</h2>
+</head>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ArcherCraftStore/ObjectiveKarel/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ArcherCraftStore/ObjectiveKarel/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<body>
+<h1>Objective Karel</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="objectivekarel" class="anchor" href="#objectivekarel"><span class="octicon octicon-link"></span></a>ObjectiveKarel</h1>
+<div id="user-code" style="display:none;">
+function putTowerBall(){
+    move();
+    putBall();
+}
+function buildBase(){
+    putBall();
+    move();
+    putBall();
+    move();
+    putBall();
 
-<p>Objective Karel++</p>
-      </section>
-    </div>
+}
+function buildMiddle(){
+    move();
+    putBall();
+    move();
+    putBall();
+}
+function buildTop(){
+    move();
+    move();
+    putBall();
+}
+function recover(){
+    turnLeft();
+    move();
+    turnLeft();
+    move();
+    move();
+    turnLeft();
+}
+function turnRight() {
+    turnLeft();
+    turnLeft();
+    turnLeft();                 
+}
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Objectivekarel maintained by <a href="https://github.com/ArcherCraftStore">ArcherCraftStore</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+// "Defining a function"
+function turnAround(){
+    turnLeft();
+    turnLeft();
+}
+function moveTwice(){
+    move();
+    move();
+}
+function turnRight() {
+    turnLeft();
+    turnLeft();
+    turnLeft();                 
+}
+function slideSouth(){
+    turnRight();
+    move();
+    move();
+    move();
+    turnLeft();
+}
+function turnRight() {
+    turnLeft();
+    turnLeft();
+    turnLeft();                 
+}
+function buildSlideTier(){
+    putBall();
+    turnRight();
+    move();
+    turnLeft();
+    move();
+}
 
-    
 
-  </body>
+</div>
+
+<canvas 
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+
+<script>
+var g = new CodeHSGraphics({
+    canvas: $('.codehs-editor-canvas')
+});
+// run test # here.
+g.runCode($("#user-code").text());
+
+</script>
+
+</body>
 </html>
